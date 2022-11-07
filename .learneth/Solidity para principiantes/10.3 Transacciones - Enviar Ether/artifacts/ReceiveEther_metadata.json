@@ -1,0 +1,67 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".learneth/Solidity para principiantes/10.3 Transacciones - Enviar Ether/sendingEther.sol": "ReceiveEther"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".learneth/Solidity para principiantes/10.3 Transacciones - Enviar Ether/sendingEther.sol": {
+			"keccak256": "0x7ae9a680900dec67ef983317789f6be96639ab456832a492d2c01406c1484e88",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://45a71ccfb27e44f5b35d694ffe0e3d5ea40e8cb28dad7fcd218bb985ea95bdd3",
+				"dweb:/ipfs/QmPfSprHCzyP9CSYrWmsoSPk6F6biouNJmT84uhzGoSXzM"
+			]
+		}
+	},
+	"version": 1
+}

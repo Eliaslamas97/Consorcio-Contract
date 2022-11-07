@@ -1,0 +1,140 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "newWithdrawAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "newBuildingAdd",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "newConsorcioAdd",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EtherReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pricePaid",
+						"type": "uint256"
+					}
+				],
+				"name": "ExpensesPaid",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "payExpenses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Tenant.sol": "Tenant"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BaseUser.sol": {
+			"keccak256": "0xd09cc83486ef5ff4e9e5b45df922332e21062f57a88f7d8091d770261858a0a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://db2a3613520096a036d28652a1cf8af6d4d2096cb8e534108ef6147164369d98",
+				"dweb:/ipfs/QmQuTn2dQ6w5hZKenD7n4sdEoJR57jRAjuXhGQhoSUGZEU"
+			]
+		},
+		"Tenant.sol": {
+			"keccak256": "0x66dca6b89eb856d47fc579a5cd93f585a7eabf9dc55b53a6ab7817c71cb3771d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0dc16dab9b66aeaccaf2cb67cd2ef07650da0f299f9a31a8dd17bcf32600d342",
+				"dweb:/ipfs/QmSYk4jWxz7dtnQGe5TwfgRUb7BjRsarHRCkFht4hwRdSc"
+			]
+		}
+	},
+	"version": 1
+}

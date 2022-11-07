@@ -1,0 +1,87 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "newAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "newJob",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newSchedule",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Employee.sol": "Employee"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BaseUser.sol": {
+			"keccak256": "0xd09cc83486ef5ff4e9e5b45df922332e21062f57a88f7d8091d770261858a0a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://db2a3613520096a036d28652a1cf8af6d4d2096cb8e534108ef6147164369d98",
+				"dweb:/ipfs/QmQuTn2dQ6w5hZKenD7n4sdEoJR57jRAjuXhGQhoSUGZEU"
+			]
+		},
+		"Employee.sol": {
+			"keccak256": "0x73fdaf3067a7c9a24937c6bde4209416107d0099088d35649eaeed1dd6c9a5d1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://972d4659dd9cc2c996303bab3824def5d53bde2e71db341a039e484cffed840a",
+				"dweb:/ipfs/QmPd2SFSyeUaDSCW1C1HkgJJ4ibAue9U1dej4FWq9EfrAs"
+			]
+		}
+	},
+	"version": 1
+}
