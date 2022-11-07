@@ -1,0 +1,217 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "addNewEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "addNewService",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "addNewTenant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "payAllServices",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paySalaries",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "payService",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Consorcio.sol": "Consorcio"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"BaseUser.sol": {
+			"keccak256": "0xd09cc83486ef5ff4e9e5b45df922332e21062f57a88f7d8091d770261858a0a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://db2a3613520096a036d28652a1cf8af6d4d2096cb8e534108ef6147164369d98",
+				"dweb:/ipfs/QmQuTn2dQ6w5hZKenD7n4sdEoJR57jRAjuXhGQhoSUGZEU"
+			]
+		},
+		"Consorcio.sol": {
+			"keccak256": "0xa2b2e41d5e7d7b40ce05b6e7be057e73f49e296ea718d72cab6986c0f527eeed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ea2ea9a6bec425c8ae86096fc8ba65d9cc563b8055b17456466c706095189bc",
+				"dweb:/ipfs/Qmd4sBqDP1EgjuWHpGtcG4JSy8syvvVgifuMhuzF7pDCUM"
+			]
+		},
+		"Employee.sol": {
+			"keccak256": "0x73fdaf3067a7c9a24937c6bde4209416107d0099088d35649eaeed1dd6c9a5d1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://972d4659dd9cc2c996303bab3824def5d53bde2e71db341a039e484cffed840a",
+				"dweb:/ipfs/QmPd2SFSyeUaDSCW1C1HkgJJ4ibAue9U1dej4FWq9EfrAs"
+			]
+		},
+		"Tenant.sol": {
+			"keccak256": "0x66dca6b89eb856d47fc579a5cd93f585a7eabf9dc55b53a6ab7817c71cb3771d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0dc16dab9b66aeaccaf2cb67cd2ef07650da0f299f9a31a8dd17bcf32600d342",
+				"dweb:/ipfs/QmSYk4jWxz7dtnQGe5TwfgRUb7BjRsarHRCkFht4hwRdSc"
+			]
+		}
+	},
+	"version": 1
+}
