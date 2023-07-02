@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -9,34 +9,136 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "newName",
+						"name": "_name",
 						"type": "string"
 					},
 					{
 						"internalType": "address",
-						"name": "newAddress",
+						"name": "_withdrawAddress",
 						"type": "address"
 					},
 					{
 						"internalType": "string",
-						"name": "newJob",
+						"name": "_profession",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "newSchedule",
+						"name": "_schedule",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_salary",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tenantAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"name": "EtherReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "addressBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "WithdrawalSuccess",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
 				"inputs": [],
-				"name": "withdrawAll",
+				"name": "getAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSalary",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showUserBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawal",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -54,7 +156,7 @@
 		"compilationTarget": {
 			"Employee.sol": "Employee"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -67,19 +169,19 @@
 	},
 	"sources": {
 		"BaseUser.sol": {
-			"keccak256": "0xd09cc83486ef5ff4e9e5b45df922332e21062f57a88f7d8091d770261858a0a1",
+			"keccak256": "0xfbd62f9e09aeab84b8e5958a15f3090390a111d5de8fec3ee3b13ec1b02c00bf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db2a3613520096a036d28652a1cf8af6d4d2096cb8e534108ef6147164369d98",
-				"dweb:/ipfs/QmQuTn2dQ6w5hZKenD7n4sdEoJR57jRAjuXhGQhoSUGZEU"
+				"bzz-raw://e9bd76761f4b7ffa46cef375c925febf2e6bc2a8d5a869476053a23c20494d2a",
+				"dweb:/ipfs/QmXB7e9jMeURiwBEnwdku4zpfoos4GG76kHYaGhPxjpjR2"
 			]
 		},
 		"Employee.sol": {
-			"keccak256": "0x73fdaf3067a7c9a24937c6bde4209416107d0099088d35649eaeed1dd6c9a5d1",
+			"keccak256": "0xf3aef6d32f4c02e0efdefef424a47d85462bc6483843230b81059a44affbe00e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://972d4659dd9cc2c996303bab3824def5d53bde2e71db341a039e484cffed840a",
-				"dweb:/ipfs/QmPd2SFSyeUaDSCW1C1HkgJJ4ibAue9U1dej4FWq9EfrAs"
+				"bzz-raw://deafe542c699e645ad19a626acf970efd5c70f72871b3ae6d8231e67ce4daa8a",
+				"dweb:/ipfs/QmQcqcitFWTKbMv7k1Jy1msmwjY2XqawainMiGMtDiowfY"
 			]
 		}
 	},

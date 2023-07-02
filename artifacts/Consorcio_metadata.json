@@ -1,10 +1,15 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
 			{
 				"anonymous": false,
 				"inputs": [
@@ -25,28 +30,175 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "salariesPaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "serviceName",
+						"type": "string"
+					}
+				],
+				"name": "serviceCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "serviceName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "servicePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "servicePaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pricePaid",
+						"type": "uint256"
+					}
+				],
+				"name": "servicesPaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "servicesPaidSuccessfully",
+				"type": "event"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "fallback"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_withdrawAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_profession",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_schedule",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salary",
+						"type": "uint256"
+					}
+				],
 				"name": "addNewEmployee",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "serviceName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "servicePrice",
+						"type": "uint256"
+					}
+				],
 				"name": "addNewService",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_withdrawAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_servicePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_buildingAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_consorcioAddress",
+						"type": "address"
+					}
+				],
 				"name": "addNewTenant",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "depositEmployee",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "depositTenant",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "employeeArray",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -110,6 +262,26 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "tenantArray",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tenantWithdrawal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -118,6 +290,24 @@
 					}
 				],
 				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferToAddress",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -134,7 +324,7 @@
 					"details": "Returns the address of the current owner."
 				},
 				"renounceOwnership()": {
-					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
 				},
 				"transferOwnership(address)": {
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
@@ -152,7 +342,7 @@
 		"compilationTarget": {
 			"Consorcio.sol": "Consorcio"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -165,11 +355,11 @@
 	},
 	"sources": {
 		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
-				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
+				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
 			]
 		},
 		"@openzeppelin/contracts/utils/Context.sol": {
@@ -181,35 +371,35 @@
 			]
 		},
 		"BaseUser.sol": {
-			"keccak256": "0xd09cc83486ef5ff4e9e5b45df922332e21062f57a88f7d8091d770261858a0a1",
+			"keccak256": "0xfbd62f9e09aeab84b8e5958a15f3090390a111d5de8fec3ee3b13ec1b02c00bf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db2a3613520096a036d28652a1cf8af6d4d2096cb8e534108ef6147164369d98",
-				"dweb:/ipfs/QmQuTn2dQ6w5hZKenD7n4sdEoJR57jRAjuXhGQhoSUGZEU"
+				"bzz-raw://e9bd76761f4b7ffa46cef375c925febf2e6bc2a8d5a869476053a23c20494d2a",
+				"dweb:/ipfs/QmXB7e9jMeURiwBEnwdku4zpfoos4GG76kHYaGhPxjpjR2"
 			]
 		},
 		"Consorcio.sol": {
-			"keccak256": "0xa2b2e41d5e7d7b40ce05b6e7be057e73f49e296ea718d72cab6986c0f527eeed",
+			"keccak256": "0xe1d3c59b0595014ef078cb5b00841fdb08bcf8abeb5a3244c16c09f644fc06c4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9ea2ea9a6bec425c8ae86096fc8ba65d9cc563b8055b17456466c706095189bc",
-				"dweb:/ipfs/Qmd4sBqDP1EgjuWHpGtcG4JSy8syvvVgifuMhuzF7pDCUM"
+				"bzz-raw://08a107b9396f9fc157f90034eebb27bf967130c9871053f3ecc6fa0042f63375",
+				"dweb:/ipfs/QmS1FhxgvRVNVymfUr4Zva2X5C23yCr99v8SXB659NtfPg"
 			]
 		},
 		"Employee.sol": {
-			"keccak256": "0x73fdaf3067a7c9a24937c6bde4209416107d0099088d35649eaeed1dd6c9a5d1",
+			"keccak256": "0xf3aef6d32f4c02e0efdefef424a47d85462bc6483843230b81059a44affbe00e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://972d4659dd9cc2c996303bab3824def5d53bde2e71db341a039e484cffed840a",
-				"dweb:/ipfs/QmPd2SFSyeUaDSCW1C1HkgJJ4ibAue9U1dej4FWq9EfrAs"
+				"bzz-raw://deafe542c699e645ad19a626acf970efd5c70f72871b3ae6d8231e67ce4daa8a",
+				"dweb:/ipfs/QmQcqcitFWTKbMv7k1Jy1msmwjY2XqawainMiGMtDiowfY"
 			]
 		},
 		"Tenant.sol": {
-			"keccak256": "0x66dca6b89eb856d47fc579a5cd93f585a7eabf9dc55b53a6ab7817c71cb3771d",
+			"keccak256": "0x5c84084aa8219b3e6fbabea47f2c99b01ff03abbfea9e396495293816801b169",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0dc16dab9b66aeaccaf2cb67cd2ef07650da0f299f9a31a8dd17bcf32600d342",
-				"dweb:/ipfs/QmSYk4jWxz7dtnQGe5TwfgRUb7BjRsarHRCkFht4hwRdSc"
+				"bzz-raw://27332b9d0da75f86f77a7d0e4d6f34d105622fbebaf61e40ed8481bb4bb57b25",
+				"dweb:/ipfs/QmXxKT9qcSSwg9f2G8uciaVbLALTDuykoQS7nDZ9rFVfYn"
 			]
 		}
 	},
